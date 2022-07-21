@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ToggleImages from "./components/ToggleImages.js";
+import React, { useState } from "react";
+import ButtonText from "./components/ButtonText.js";
 
 function App() {
+  const [active, setActive] = useState(false);
+
+  const handleChangeActive = () => {
+    setActive((current) => !current);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Box">
+        <p className="Title">Light the buld</p>
+        <ToggleImages active={active} />
+        <button onClick={handleChangeActive}>
+          <ButtonText active={active} />
+        </button>
+      </div>
     </div>
   );
 }
