@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="Box">
-        <p className="Title">Light the buld</p>
+        <p className="Title">Light the bbbuld</p>
         <ToggleImages active={active} />
         <button onClick={handleChangeActive}>
           <ButtonText active={active} />
